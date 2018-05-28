@@ -19,11 +19,18 @@ export class BreadcrumbComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router) {
-      console.log(this.breadcrumbs)
-    }
+    console.log(this.breadcrumbs)
+  }
 
   ngOnInit() {
   }
+
+  /**
+   * seconde method
+   * @link https://angular.io/api/router/UrlTree
+   *
+   * const urlTree: UrlTree = route.parseUrl(route.url);
+   */
 
   buildBreadCrumb(route: ActivatedRoute, url: string = '', breadcrumbs: Array<Breadcrumb> = []): Array<Breadcrumb> {
     const label = route.routeConfig ? route.routeConfig.data['breadcrumb']['label'] : 'Home';
